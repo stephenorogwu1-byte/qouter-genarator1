@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        background-color: deepskyblue;
+    }
+    div{
+        margin: 50px 450px 50px 450px;
+        height: 250px;
+        width: 250px;
+        border: 5px solid white;
+        background-color: greenyellow;
+    }
+
+    p {
+        text-align: center;
+    }
+    #showQoutes{
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 60px;
+    background-color: dodgerblue;
+    }
+    input{
+        margin-left: 50px;
+        margin-right: 70px;
+    }
+    #clearQoute{
+        text-align: center;
+        margin-right: 50px;
+        margin-left: 75px;
+        background-color: springgreen;
+    }
+
+</style>
+<body>
+<div>
+<p id="qoutes1">click the button below to see the qoutes</p>
+<p id="author"></p>
+<button id="showQoutes">show me a qoute</button>
+<button id="clearQoute">clear Qoute</button>
+</div>
+</body>
+<script>
+    const qoutesText = document.getElementById("qoutes1");
+    const author = document.getElementById("author")
+    const clearqoute = document.getElementById("clearQoute");
+
+    const quotes = [
+        {
+            text: "Do not put all your eggs in one basket",
+            Author: "stephen"
+        },
+        {
+            text: "The way only way great work is to love what you do",
+            Author: "steve jobs"
+        },
+        {
+          text: "its never to late to be what you might have been",
+            Author: "peter hawks"
+        },
+        {
+            text: "All our dreams can come true if you an purse them",
+            Author: "walt Disney"
+        },
+        {
+           text:"time is long but life is short",
+            Author: "christan"
+        },
+        {
+            text: " dont wait the time can never be just right",
+            Author:"napoloen hill"
+        },
+        {
+          text:"the greater the obstacle the more glory in overcoming it",
+            Author:"moliere"
+        }
+    ];
+
+
+    const quote = document.getElementById("showQoutes");
+
+        quote.addEventListener("click", () => {
+        let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        qoutesText.textContent = `${randomQuote.text}`
+         author.textContent = `${randomQuote.Author}`
+
+
+    });
+        clearqoute.addEventListener("click", () => {
+            qoutesText.textContent = "NO MORE QOUTE"
+            author.textContent = ""
+        });
+
+
+
+
+
+
+</script>
+</html>
